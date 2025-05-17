@@ -92,3 +92,34 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
       document.getElementById('thankYouMessage').style.display = 'none';
   }, 5000);
 });
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  document.getElementById('customAlert').style.display = 'block';
+});
+
+// Close button functionality
+document.getElementById('alertClose').addEventListener('click', function() {
+  document.getElementById('customAlert').style.display = 'none';
+});
+
+// Also show on dev tools attempt
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+      e.preventDefault();
+      document.getElementById('customAlert').style.display = 'block';
+  }
+});
+
+document.querySelector('.journey-text').addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = `${e.clientX - this.getBoundingClientRect().left}px`;
+            sparkle.style.top = `${e.clientY - this.getBoundingClientRect().top}px`;
+            sparkle.style.width = `${Math.random() * 8 + 4}px`;
+            sparkle.style.height = sparkle.style.width;
+            this.appendChild(sparkle);
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        });
