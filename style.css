@@ -132,30 +132,7 @@ body {
 }
 
 /* === OPTIONAL: Add vertical separators between links === */
-/* .nav-links li:not(:last-child)::after {
-    content: '|';
-    color: #ffffff77;
-    margin-left: 10px;
-    margin-right: 10px;
-} */
 
-/* .profile-pic{
-    border-radius: 2%;
-    width: 40%;
-    height: 50%;
-    margin-top: 10%;
-    object-fit: cover;
-  }
-  .about{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    gap:40px;
-    padding:40px;
-    margin: auto;
-    max-width: 1000px;
-    border-radius: 10px;
-  } */
 p {
 	transform: translateY(2px);
 	margin: 0%;
@@ -302,7 +279,7 @@ body {
 }
 
 .skill-card:hover {
-	transform: translateY(-5px);
+	transform: translateY(-5px) !important;
 	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -1124,7 +1101,7 @@ body {
 
 .social-icon:hover {
 	color: #3b82f6;
-	transform: translateY(-3px);
+	transform: translateY(-3px) !important;
 }
 
 .divider {
@@ -1580,7 +1557,7 @@ body::-webkit-scrollbar {
 }
 
 .social-icon:hover {
-	transform: translateY(-5px) scale(1.2);
+	transform: translateY(-5px) scale(1.2) !important;
 	color: #3b82f6;
 }
 
@@ -1727,3 +1704,186 @@ body::-webkit-scrollbar {
 		display: none;
 	}
 }
+
+.custom-alert {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+	color: white;
+	padding: 30px;
+	border-radius: 15px;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+	z-index: 9999;
+	text-align: center;
+	max-width: 300px;
+	border: 2px solid #ef4444;
+	overflow: hidden;
+}
+
+/* Danger Plane Icon Animation */
+.alert-icon {
+	font-size: 3.5rem;
+	color: #ef4444;
+	margin: 15px 0;
+	position: relative;
+	animation: 
+		planeDanger 0.8s ease-in-out infinite alternate,
+		shake 0.5s ease-in-out infinite;
+}
+
+@keyframes planeDanger {
+	0% { transform: translateY(0) rotate(-5deg); }
+	100% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes shake {
+	0%, 100% { transform: translateX(0); }
+	25% { transform: translateX(-5px); }
+	75% { transform: translateX(5px); }
+}
+
+/* Radioactive Warning Symbol */
+.danger-symbol {
+	position: absolute;
+	font-size: 1.2rem;
+	top: 15px;
+	right: 15px;
+	color: #f59e0b;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% { transform: scale(1); opacity: 1; }
+	50% { transform: scale(1.3); opacity: 0.7; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+/* Alert Text Styling */
+.alert-text {
+	font-size: 1.1rem;
+	margin: 20px 0;
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Close Button */
+.alert-close {
+	background: linear-gradient(to right, #ef4444, #f59e0b);
+	color: white;
+	border: none;
+	padding: 10px 25px;
+	border-radius: 50px;
+	cursor: pointer;
+	font-weight: bold;
+	transition: all 0.3s;
+	box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.alert-close:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 7px 20px rgba(239, 68, 68, 0.6);
+}
+
+/* Corner Triangles */
+.alert-corner {
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+}
+
+.alert-corner-tl {
+	top: 0;
+	left: 0;
+	border-width: 30px 30px 0 0;
+	border-color: #ef4444 transparent transparent transparent;
+}
+
+.alert-corner-br {
+	bottom: 0;
+	right: 0;
+	border-width: 0 0 30px 30px;
+	border-color: transparent transparent #ef4444 transparent;
+}
+
+.craft-statement {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: #e5e7eb;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 25px;
+            position: relative;
+        }
+
+        .craft-statement::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+        }
+
+        .craft-statement::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+        }
+
+        .highlight-word {
+            position: relative;
+            display: inline-block;
+        }
+
+        .highlight-word::before {
+            content: "";
+            position: absolute;
+            bottom: 2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: rgba(34, 211, 238, 0.3);
+            z-index: -1;
+            transition: height 0.3s ease;
+        }
+
+        .highlight-word:hover::before {
+            height: 12px;
+            background-color: rgba(34, 211, 238, 0.5);
+        }
+
+        .tech-word {
+            font-weight: 600;
+            color: #22d3ee;
+            position: relative;
+        }
+
+        .tech-word::after {
+            content: "✦";
+            position: absolute;
+            right: -12px;
+            top: -8px;
+            font-size: 0.7em;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tech-word:hover::after {
+            opacity: 1;
+        }
