@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Raghul : Portfolio</title>
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
       <link rel="stylesheet" href="style.css">
@@ -30,8 +31,8 @@
          <div class="home-content">
             <h2>Hi, I'm <span class="gradient-name">Raghul</span></h2>
             <p>Fuelled by curiosity, driven by code.</p>
-            <p>On a journey to craft ideas into experiences through technology and design.</p>
-         </div>
+ <div class="craft-statement">
+        On a <span class="highlight-word">journey</span> to <span class="highlight-word">craft</span> ideas into experiences through <span class="tech-word">technology</span> and <span class="tech-word">design</span>.         </div>
       </section>
       <section id="skills" class="skills-section">
          <h2>Skills Learned</h2>
@@ -300,6 +301,27 @@
          </a>
          All rights reserved.
       </div>
+      <div class="custom-alert" id="customAlert">
+         <div class="danger-symbol">
+             <i class="fas fa-radiation"></i>
+         </div>
+         <div class="alert-corner alert-corner-tl"></div>
+         <div class="alert-corner alert-corner-br"></div>
+         
+         <div class="alert-icon">
+             <i class="fas fa-lock"></i>
+         </div>
+         
+         <div class="alert-text">
+             <span style="color: #ef4444">⚠️ WARNING !!</span><br>
+             👀✨ You are seeing my Portfolio ✨👨‍💻<br>
+             <small style="color: #9ca3af">(Content protection active)</small>
+         </div>
+         
+         <button class="alert-close" id="alertClose">
+             <i class="fas fa-times"></i> Acknowledge
+         </button>
+     </div>
       <script src="script.js"></script>
    </body>
 </html>
