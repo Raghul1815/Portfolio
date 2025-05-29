@@ -229,7 +229,37 @@
             <div class="about-right">
                <h2>About Me</h2>
                <p>Hello! I'm <span class="profile-name">Raghul S</span> a passionate developer with expertise in web technologies and know Java programming with understanding of OOP concepts too. I love creating efficient, user-friendly applications that solve real-world problems.</p>
-               <p>My journey in tech began with simple HTML pages and has evolved into building complex web applications. I'm constantly learning new technologies to expand my skill set.</p>
+               <p>My journey in tech began with simple HTML pages and has evolved into building complex web applications. I'm constantly learning new technologies to expand my skill set.#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void swap(int *a, int *b) {
+    int t = *a; *a = *b; *b = t;
+}
+
+int p(int a[], int l, int h) {
+    int pivot = a[h], i = l - 1, j;
+    for (j = l; j < h; j++) if (a[j] < pivot) swap(&a[++i], &a[j]);
+    swap(&a[++i], &a[h]);
+    return i;
+}
+
+int q(int a[], int l, int h, int k) {
+    if (l == h) return a[l];
+    int pIndex = p(a, l, h);
+    return (k == pIndex) ? a[pIndex] : (k < pIndex) ? q(a, l, pIndex - 1, k) : q(a, pIndex + 1, h, k);
+}
+
+int find_k(int a[], int n, int k) {
+    return q(a, 0, n - 1, k - 1);
+}
+
+int main() {
+    srand(time(NULL));
+    int a[] = {12, 7, 91, 7, 21, 50};
+    printf("%dth smallest: %d\n", 5, find_k(a, 6, 5));
+    return 0;
+}</p>
                <div class="timeline-container">
                   <div class="timeline-path"></div>
                   <div class="timeline-items">
