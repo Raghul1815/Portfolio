@@ -70,7 +70,7 @@ A Flask-based web application that provides quick access to first-aid guidance d
 
 - 📧 Email: iamraghul18@gmail.com  
 - 💻 GitHub: https://github.com/Raghul1815  
-- 🔗 LinkedIn: (Add your LinkedIn profile link here)
+- 🔗 LinkedIn: https://www.linkedin.com/in/raghul-saravanakumar/
 
 ---
 
